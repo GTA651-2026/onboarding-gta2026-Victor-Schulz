@@ -1,0 +1,142 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "adb8d6c9-ac7a-4174-9f63-474c0e63b269",
+      "name": "When chat message received",
+      "webhookId": "5b14ca70-98e7-4121-a8a4-f8aff9c2ca20"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-5-MINI"
+        },
+        "responses": {
+          "values": [
+            {}
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "330021d8-183e-4d07-9efd-42c3f1debaed",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "d3QztD2P17MkCsW0",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "folderId": "default",
+        "title": "Test"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        560,
+        0
+      ],
+      "id": "dfc76d0d-2cf5-4ff7-813c-e2952ebfe5c3",
+      "name": "Create a document",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "fGPJwRL77yYxWbXS",
+          "name": "Google Docs OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.2,
+      "position": [
+        352,
+        224
+      ],
+      "id": "c4932a77-d897-4d2c-a53e-8345564e6e2c",
+      "name": "Create a draft in Gmail",
+      "webhookId": "2dd33efc-8143-40b5-8d90-bbbccc56a5d1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ZNWmeWd9XJHJktwN",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Create a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a draft in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Message a model",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "338f4aa4-698d-4e3c-8cdb-26ee6b87cece",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b12036a9ba95e866af60189cf381a68b1353940819acac2af3fc4e1ed3e053b1"
+  },
+  "id": "DSx6al8rYWebpc9B",
+  "tags": []
+}
