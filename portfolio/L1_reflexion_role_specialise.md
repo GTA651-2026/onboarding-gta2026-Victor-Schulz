@@ -8,31 +8,25 @@
 
 ## Cas choisi
 
-_(Klarna / GitHub Copilot Enterprise / Morgan Stanley)_
+GitHub Copilot Enterprise
 
 ## 1. Probleme d'affaires resolu
-
-_(En 2-3 phrases : quel probleme concret l'organisation cherchait-elle a resoudre ?)_
+L’organisation cherchait à accélérer le développement logiciel et à réduire le temps entre l’idée d’une fonctionnalité et sa réalisation technique. Le problème concret était que la création de logiciels dépendait fortement des développeurs spécialisés, ce qui ralentissait les équipes produit, les analystes et les gestionnaires.
 
 ## 2. Fonction d'affaires ciblee
-
-_(Service client, developpement logiciel, analyse financiere, etc.)_
+Développement logiciel.
 
 ## 3. Role specialise que l'agent orchestre
-
-_(Nommez-le precisement : agent de service client, agent developpeur, agent analyste, etc.)_
+Agent développeur.
 
 ## 4. Valeur creee — quantifiee avec donnees publiques
-
-_(Chiffres concrets issus des sources du cours. Ex. : 700 agents equivalents, 55 % plus rapide, etc.)_
+Accenture a déployé GitHub Copilot Enterprise auprès de 12 000 développeurs, avec 67 % d’utilisation quotidienne et 96 % de taux de succès déclaré. Selon GitHub Research, Copilot permet aussi une vitesse de codage 55 % plus rapide dans des tâches contrôlées. La valeur créée est donc une augmentation importante de la productivité, mais aussi une démocratisation du développement logiciel pour des profils non techniques comme les gestionnaires de produits ou les analystes.
 
 ## 5. Risque principal et mitigation concrete
-
-_(Quel est le risque le plus important ? Quelle mesure concrete le reduit ?)_
+Le risque principal est la génération de code incorrect, non sécurisé ou mal adapté aux besoins réels de l’organisation. Pour réduire ce risque, il faut garder une validation humaine obligatoire par des développeurs, utiliser des tests automatisés, appliquer des contrôles de sécurité du code et limiter l’accès de l’agent aux dépôts et données sensibles.
 
 ## 6. Condition de succes pour votre organisation
-
-_(Qu'est-ce qui doit etre en place pour que ce deploiement agentique fonctionne ?)_
+Pour que ce déploiement fonctionne, l’organisation doit avoir une gouvernance claire de l’IA, des règles d’utilisation précises et des équipes capables de valider le code généré. Il faut aussi former les gestionnaires, analystes et développeurs à bien formuler leurs demandes, tester les prototypes et collaborer avec l’agent sans remplacer complètement le jugement humain.
 
 ---
 
